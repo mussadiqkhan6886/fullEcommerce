@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import cart_icon from "../Assets/cart_icon.png"
 import logo from "../Assets/logo.png"
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 
 const NavBar = () => {
     const [catogery, setCatogery] = useState("shop")
+    const location = useLocation()
+    useEffect(() => {
+        const currentPath = location.pathname.split("/")[1]
+        if(currentPath == "men" || currentPath == "women" || currentPath == "kid" || currentPath == "login" || currentPath == "cart"){
+            setCatogery(currentPath)
+        }else{
+            setCatogery("shop")
+        }
+    }, [location.pathname])
   return (
     <header className='flex shadow justify-around py-2 items-center'>
         <div className='flex items-center'>
@@ -13,10 +22,10 @@ const NavBar = () => {
         </div>
         <div className='w-[40%]'>
             <ul className='flex w-full justify-between text-gray-700 items-center'>
-                <li onClick={() => setCatogery("shop")}  className={catogery == "shop" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/">Shop</Link> </li>
-                <li onClick={() => setCatogery("men")} className={catogery == "men" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/men">Men</Link> </li>
-                <li onClick={() => setCatogery("women")} className={catogery == "women" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/women">Women</Link></li>
-                <li onClick={() => setCatogery("kids")} className={catogery == "kids" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to='kid'>Kids</Link></li>
+                <li  className={catogery == "shop" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/">Shop</Link> </li>
+                <li className={catogery == "men" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/men">Men</Link> </li>
+                <li className={catogery == "women" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/women">Women</Link></li>
+                <li className={catogery == "kid" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to='kid'>Kids</Link></li>
             </ul>
         </div>
         <div className='flex relative gap-6'>

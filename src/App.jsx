@@ -8,6 +8,9 @@ import ShopCategory from "./Pages/ShopCategory"
 import Product from "./Pages/Product"
 import NotFound from "./Pages/NotFound"
 import Footer from "./Components/Footer/Footer"
+import men_banner from "./Components/Assets/banner_mens.png"
+import women_banner from "./Components/Assets/banner_women.png"
+import kid_banner from "./Components/Assets/banner_kids.png"
 
 const App = () => {
   return(
@@ -18,9 +21,9 @@ const App = () => {
         <Route path="/" element={<Shop />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<LoginSignup  />}></Route>
-        <Route path="/men" element={<ShopCategory category={"men"} />}></Route>
-        <Route path="/women" element={<ShopCategory category={"women"} />}></Route>
-        <Route path="/kid" element={<ShopCategory category={"kid"} />}></Route>
+        <Route path="/men" element={<ShopCategory banner={men_banner}  category={"men"} />}></Route>
+        <Route path="/women" element={<ShopCategory banner={women_banner} category={"women"} />}></Route>
+        <Route path="/kid" element={<ShopCategory banner={kid_banner} category={"kid"} />}></Route>
         <Route path="product/:id" element={<Product />}></Route>
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
