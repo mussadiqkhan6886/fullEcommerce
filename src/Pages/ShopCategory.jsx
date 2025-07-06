@@ -8,9 +8,9 @@ const ShopCategory = ({banner, category}) => {
   const {all_products} = useContext(ShopContext)
 
   return (
-    <div className='px-20 py-9 text-center'> 
+    <div className='lg:px-20 md:py-9 text-center'> 
       <img src={banner} alt="banner" />
-      <div className='flex justify-between my-5'>
+      <div className='flex justify-between my-5 px-4'>
         <p>
           <span className='font-semibold'>Showing 1-12 </span>
           out of 36 Products
@@ -19,9 +19,8 @@ const ShopCategory = ({banner, category}) => {
           <p>Sort by</p>
          <img className='w-[11px] h-[8px]' src={dropIcon} alt="dropdownicon" />
         </div>
-        
       </div>
-      <div className='grid grid-cols-4'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {all_products.map((item, i) => {
           if(item.category == category){
             return <Items key={i} id={item.id} name={item.name} img={item.image} old_price={item.old_price} new_price={item.new_price}  />

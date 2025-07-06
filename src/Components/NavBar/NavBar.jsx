@@ -19,12 +19,13 @@ const NavBar = () => {
         }
     }, [location.pathname])
   return (
-    <header className='flex shadow justify-around py-2 items-center'>
+    <>
+    <header className='flex shadow justify-between px-10 py-2 items-center'>
         <div className='flex items-center'>
             <img className='w-[44px] h-[44px]' src={logo} alt="logo" />
             <h1 className='font-bold text-2xl'>SHOPPER</h1>
         </div>
-        <div className='w-[40%]'>
+        <div className='w-[40%] md:block hidden'>
             <ul className='flex w-full justify-between text-gray-700 items-center'>
                 <li  className={catogery == "shop" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/">Shop</Link> </li>
                 <li className={catogery == "men" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/men">Men</Link> </li>
@@ -38,6 +39,17 @@ const NavBar = () => {
             <p className='bg-red-600 text-white absolute rounded-full w-[20px] text-[14px] text-center -right-2 -top-1'>{cartTotalCount()}</p>
         </div>
     </header>
+    <nav className='md:hidden '>
+        <div className='p-2 px-5'>
+            <ul className='flex w-full justify-between text-gray-700 items-center '>
+                <li  className={catogery == "shop" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/">Shop</Link> </li>
+                <li className={catogery == "men" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/men">Men</Link> </li>
+                <li className={catogery == "women" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to="/women">Women</Link></li>
+                <li className={catogery == "kid" ? "border-b-2 py-1 border-red-500 text-[17px]" : ""}> <Link to='kid'>Kids</Link></li>
+            </ul>
+        </div>
+    </nav>
+    </>
   )
 }
 

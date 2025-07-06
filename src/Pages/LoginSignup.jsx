@@ -3,7 +3,7 @@ import React from 'react'
 const LoginSignup = () => {
   return (
     <div className='bg-gradient-to-b from-pink-100 to-purple-200 h-dvh flex justify-center items-center'>
-      <div className='bg-white p-7 mb-10'>
+      <div className='bg-white p-7 mb-10 m-5'>
         <h2 className='font-semibold text-2xl mb-4'>Sign Up</h2>
         <div className='flex flex-col'>
           <input className='border border-gray-300 outline-none px-4 py-2 rounded my-2' type="text" placeholder='Your Name' autoComplete='off' />

@@ -7,10 +7,10 @@ const CartItem = () => {
     const {totalAmount, all_products, cartValue, removeFromCart} = useContext(ShopContext)
 
   return (
-    <section className='p-10 px-30'>
+    <section className='md:p-10 pt-5 lg:px-30'>
     <div className='flex'>
         <h2 className='w-[10%] font-semibold text-[18px] mb-3'>Products</h2>
-        <h2 className='w-[30%] font-semibold text-[18px] mb-3'>Title</h2>
+        <h2 className='w-[30%] font-semibold text-[18px] mb-3 text-center'>Title</h2>
         <h2 className='w-[15%] font-semibold text-[18px] mb-3'>Price</h2>
         <h2 className='w-[15%] font-semibold text-[18px] mb-3'>Quantity</h2>
         <h2 className='w-[15%] font-semibold text-[18px] mb-3'>Total</h2>
@@ -22,8 +22,8 @@ const CartItem = () => {
             if(cartValue[item.id]>0){
                 return (
                     <div key={item.id} className='flex py-2 items-center border-b border-gray-300'>
-                        <div className='w-[10%]'>
-                            <img className='w-[50%]' src={item.image} alt="image" />
+                        <div className='w-[10%] mr-3'>
+                            <img className='w-[100%] md:w-[55%]' src={item.image} alt="image" />
                         </div>
                         
                         <h3 className='w-[30%] text-[14px] pr-10'>{item.name}</h3>
@@ -31,7 +31,7 @@ const CartItem = () => {
                         <h3 className='w-[15%] pl-5'>{cartValue[item.id]}</h3>
                         <h3 className='w-[15%] pl-2'>${item.new_price * cartValue[item.id]}</h3>
                         <div className='w-[15%]'>
-                            <img className='w-[8%] ml-3 cursor-pointer' onClick={() => removeFromCart(item.id)} src={cross} alt="remove icon" />
+                            <img className='w-[18%] md:w-[8%] ml-3 cursor-pointer' onClick={() => removeFromCart(item.id)} src={cross} alt="remove icon" />
                         </div>
                     </div>
                 )
@@ -40,8 +40,8 @@ const CartItem = () => {
             }
         })}
     </div>
-    <div className='flex justify-between mt-10'>   
-        <div className='w-[40%]'>
+    <div className='flex flex-col mb-5 gap-10 items-center md:flex-row justify-between mt-10'>   
+        <div className='md:w-[40%] w-full px-10 md:px-0'>
             <h3 className='text-2xl font-semibold mb-5'>Cart Totals</h3>
             <div className='w-full text-[14px]'>
                 <div className='flex justify-between pb-2 border-b'>
