@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import hand_icon from "../Assets/hand_icon.png"
 import arrow from "../Assets/arrow.png"
 import hero from "../Assets/hero_image.png"
 
+
 const Hero = () => {
   return (
-    <section className='lg:flex justify-between bg-pink-100'> 
-      <div className='w-[50%] flex flex-col items-start justify-center m-auto pl-18'>
+    <section className='lg:flex justify-between bg-pink-100 overflow-x-hidden'> 
+      <div data-aos="fade-right" className='w-[50%] flex flex-col items-start justify-center m-auto pl-18'>
         <h2 className='font-bold text-xl'>NEW ARRIVALS ONLY</h2>
         <div className='flex gap-3'>
           <h2 className='font-semibold text-7xl'>new </h2>
@@ -18,7 +19,7 @@ const Hero = () => {
           <img className='w-[20px] h-[10px]' src={arrow} alt="arrow" />
         </div>
       </div>
-      <div  className='w-[40%]'>
+      <div data-aos="fade-left"  className='w-[40%]'>
         <img className='w-[77%]' src={hero} alt="hero Image" />
       </div>
     </section>

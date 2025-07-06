@@ -8,7 +8,7 @@ const ShopCategory = ({banner, category}) => {
   const {all_products} = useContext(ShopContext)
 
   return (
-    <div className='px-20 py-9'> 
+    <div className='px-20 py-9 text-center'> 
       <img src={banner} alt="banner" />
       <div className='flex justify-between my-5'>
         <p>
@@ -30,6 +30,7 @@ const ShopCategory = ({banner, category}) => {
           }
         })}
       </div>
+      <button className='my-10 border px-5 py-2 bg-gray-100 rounded-full cursor-pointer border-gray-400 '>Explore More</button>
     </div>
   )
 }
